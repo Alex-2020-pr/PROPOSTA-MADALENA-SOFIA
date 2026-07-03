@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPDATA PACS Cloud · Proposta Premium</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8fafc;
+            color: #102a43;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .btn-primary {
+            background: #0a2b4e;
+            color: #fff;
+            border: none;
+            padding: 14px 36px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.25s, transform 0.15s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 8px 20px rgba(10, 43, 78, 0.25);
+        }
+        .btn-primary i {
+            font-size: 1.1rem;
+        }
+        .btn-primary:hover {
+            background: #1a4b7a;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(10, 43, 78, 0.35);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: #0a2b4e;
+            border: 2px solid #0a2b4e;
+            padding: 12px 34px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.25s, color 0.25s, transform 0.15s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .btn-secondary:hover {
+            background: #0a2b4e;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        .btn-gold {
+            background: linear-gradient(135deg, #d4a847, #b8892b);
+            color: #fff;
+            border: none;
+            padding: 16px 44px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 8px 24px rgba(184, 137, 43, 0.35);
+        }
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 32px rgba(184, 137, 43, 0.45);
+        }
+        .navbar {
+            background: #ffffff;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: -0.5px;
+            color: #0a2b4e;
+        }
+        .logo span {
+            color: #b8892b;
+        }
+        .logo small {
+            font-weight: 400;
+            font-size: 0.85rem;
+            color: #4a6a8a;
+            margin-left: 8px;
+        }
+        .nav-actions {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        .nav-actions .btn-primary {
+            padding: 10px 24px;
+            font-size: 0.9rem;
+        }
+        .hero {
+            background: linear-gradient(145deg, #f0f5fe 0%, #ffffff 100%);
+            padding: 60px 0 70px;
+            border-bottom: 1px solid rgba(10, 43, 78, 0.06);
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        .hero-content h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -1px;
+            color: #0a2b4e;
+            margin-bottom: 16px;
+        }
+        .hero-content h1 .highlight {
+            color: #b8892b;
+        }
+        .hero-content .sub {
+            font-size: 1.2rem;
+            color: #2c4a6a;
+            margin-bottom: 32px;
+            font-weight: 400;
+            max-width: 90%;
+        }
+        .hero-indicators {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px 40px;
+            margin: 32px 0 36px;
+        }
+        .indicator {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            color: #0a2b4e;
+        }
+        .indicator i {
+            font-size: 1.8rem;
+            color: #b8892b;
+            width: 32px;
+            text-align: center;
+        }
+        .indicator strong {
+            font-size: 1.4rem;
+            font-weight: 800;
+            display: block;
+            line-height: 1.2;
+        }
+        .indicator span {
+            font-weight: 400;
+            font-size: 0.95rem;
+            color: #3b5a7a;
+        }
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 8px;
+        }
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero-visual .cloud-illustration {
+            width: 100%;
+            max-width: 460px;
+            background: rgba(10, 43, 78, 0.03);
+            border-radius: 40px;
+            padding: 30px;
+            backdrop-filter: blur(2px);
+            border: 1px solid rgba(10, 43, 78, 0.06);
+        }
+        .hero-visual .cloud-illustration i {
+            font-size: 6rem;
+            color: #1a5a8c;
+            opacity: 0.7;
+            display: block;
+            margin-bottom: 12px;
+        }
+        .hero-visual .cloud-illustration p {
+            font-weight: 600;
+            color: #0a2b4e;
+        }
+        .section-institucional {
+            padding: 70px 0;
+            background: #ffffff;
+        }
+        .section-institucional .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        .institucional-text h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 20px;
+            color: #0a2b4e;
+        }
+        .institucional-text p {
+            color: #2c4a6a;
+            font-size: 1.05rem;
+            margin-bottom: 16px;
+        }
+        .institucional-image {
+            background: #eef3f9;
+            border-radius: 32px;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 220px;
+            border: 1px solid rgba(10, 43, 78, 0.06);
+        }
+        .institucional-image i {
+            font-size: 4.5rem;
+            color: #1a5a8c;
+            opacity: 0.5;
+            margin-right: 20px;
+        }
+        .institucional-image .badge {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: #0a2b4e;
+        }
+        .section-cenario {
+            background: #f0f5fe;
+            padding: 70px 0;
+        }
+        .section-cenario h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #0a2b4e;
+        }
+        .cards-cenario {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+        }
+        .card-cenario {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 28px 20px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+            text-align: center;
+            border: 1px solid rgba(10, 43, 78, 0.05);
+            transition: transform 0.2s;
+        }
+        .card-cenario:hover {
+            transform: translateY(-4px);
+        }
+        .card-cenario h4 {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #0a2b4e;
+            margin-bottom: 6px;
+        }
+        .card-cenario .equip {
+            color: #4a6a8a;
+            font-weight: 500;
+        }
+        .card-cenario .volume {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #b8892b;
+            margin-top: 8px;
+        }
+        .card-cenario .volume small {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #2c4a6a;
+        }
+        .total-volume {
+            text-align: center;
+            margin-top: 32px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #0a2b4e;
+        }
+        .total-volume span {
+            color: #b8892b;
+            font-size: 2rem;
+        }
+        .section-financeiro {
+            padding: 70px 0;
+            background: #ffffff;
+        }
+        .section-financeiro .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        .financeiro-text h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 16px;
+            color: #0a2b4e;
+        }
+        .financeiro-text p {
+            color: #2c4a6a;
+            font-size: 1.05rem;
+            margin-bottom: 16px;
+        }
+        .financeiro-text .destaque {
+            font-weight: 700;
+            color: #b8892b;
+            font-size: 1.3rem;
+        }
+        .grafico {
+            background: #f8fafc;
+            border-radius: 28px;
+            padding: 30px 24px;
+            border: 1px solid rgba(10, 43, 78, 0.06);
+        }
+        .grafico .linha {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 20px;
+        }
+        .grafico .linha-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .grafico .linha-item .label {
+            font-weight: 600;
+            min-width: 120px;
+            color: #0a2b4e;
+        }
+        .grafico .barra {
+            flex: 1;
+            height: 12px;
+            border-radius: 20px;
+            background: #e2e8f0;
+            position: relative;
+        }
+        .grafico .barra .fill {
+            height: 100%;
+            border-radius: 20px;
+            background: linear-gradient(90deg, #1a5a8c, #b8892b);
+        }
+        .grafico .barra .fill.crescente {
+            width: 85%;
+            background: linear-gradient(90deg, #d4a847, #b8892b);
+        }
+        .grafico .barra .fill.fixo {
+            width: 40%;
+            background: #0a2b4e;
+        }
+        .grafico .legenda {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #2c4a6a;
+        }
+        .grafico .legenda span i {
+            color: #b8892b;
+            margin-right: 6px;
+        }
+        .section-recursos {
+            background: #0a2b4e;
+            color: #fff;
+            padding: 70px 0;
+        }
+        .section-recursos h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        .section-recursos .subtitle {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+        .grid-recursos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 18px;
+        }
+        .grid-recursos .recurso {
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 16px 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+            backdrop-filter: blur(2px);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            transition: background 0.2s;
+        }
+        .grid-recursos .recurso i {
+            color: #b8892b;
+            font-size: 1.2rem;
+            width: 24px;
+            text-align: center;
+        }
+        .grid-recursos .recurso:hover {
+            background: rgba(255, 255, 255, 0.12);
+        }
+        .section-diferenciais {
+            padding: 70px 0;
+            background: #ffffff;
+        }
+        .section-diferenciais h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #0a2b4e;
+        }
+        .grid-diferenciais {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+        .card-diferencial {
+            background: #f8fafc;
+            border-radius: 24px;
+            padding: 30px 24px;
+            border: 1px solid rgba(10, 43, 78, 0.04);
+            transition: box-shadow 0.25s;
+        }
+        .card-diferencial:hover {
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+        }
+        .card-diferencial .icon {
+            font-size: 2.2rem;
+            color: #b8892b;
+            margin-bottom: 12px;
+        }
+        .card-diferencial h4 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #0a2b4e;
+            margin-bottom: 8px;
+        }
+        .card-diferencial p {
+            color: #2c4a6a;
+        }
+        .card-diferencial .valor-destaque {
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: #b8892b;
+            margin: 8px 0 4px;
+        }
+        .section-oracle {
+            background: #eef3f9;
+            padding: 70px 0;
+        }
+        .section-oracle .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        .oracle-text h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #0a2b4e;
+            margin-bottom: 20px;
+        }
+        .oracle-text ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 24px;
+            margin-top: 16px;
+        }
+        .oracle-text ul li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+            color: #1a3a5a;
+        }
+        .oracle-text ul li i {
+            color: #b8892b;
+            font-size: 1.1rem;
+        }
+        .oracle-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 32px;
+            padding: 40px;
+            border: 1px solid rgba(10, 43, 78, 0.06);
+        }
+        .oracle-visual i {
+            font-size: 7rem;
+            color: #1a5a8c;
+            opacity: 0.5;
+        }
+        .section-comparativo {
+            padding: 70px 0;
+            background: #ffffff;
+        }
+        .section-comparativo h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #0a2b4e;
+        }
+        .table-wrap {
+            overflow-x: auto;
+            border-radius: 24px;
+            border: 1px solid rgba(10, 43, 78, 0.06);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+        thead {
+            background: #0a2b4e;
+            color: #fff;
+        }
+        th,
+        td {
+            padding: 16px 20px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        th:first-child,
+        td:first-child {
+            font-weight: 600;
+            color: #0a2b4e;
+        }
+        td:last-child {
+            font-weight: 600;
+            color: #b8892b;
+        }
+        td:last-child i {
+            color: #0a2b4e;
+            margin-right: 6px;
+        }
+        tbody tr:hover {
+            background: #f8fafc;
+        }
+        .section-comercial {
+            background: linear-gradient(145deg, #0a2b4e, #123b60);
+            color: #fff;
+            padding: 70px 0;
+            text-align: center;
+        }
+        .section-comercial .container {
+            max-width: 800px;
+        }
+        .section-comercial .badge-premium {
+            background: #b8892b;
+            color: #0a2b4e;
+            font-weight: 700;
+            padding: 6px 24px;
+            border-radius: 40px;
+            display: inline-block;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .section-comercial h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .section-comercial .sub {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+            margin-bottom: 32px;
+        }
+        .preco-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 32px;
+            padding: 40px 30px;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            margin-bottom: 24px;
+        }
+        .preco-box .valor {
+            font-size: 3.6rem;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1;
+        }
+        .preco-box .valor small {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        .preco-box .periodo {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 4px;
+        }
+        .preco-box .detalhes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px 24px;
+            margin-top: 20px;
+            text-align: left;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+        }
+        .preco-box .detalhes i {
+            color: #b8892b;
+            margin-right: 8px;
+        }
+        .preco-box .detalhes span {
+            display: flex;
+            align-items: center;
+        }
+        .preco-renovacao {
+            margin-top: 20px;
+            font-size: 1.1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+        }
+        .preco-renovacao strong {
+            color: #b8892b;
+        }
+        .taxa-zero {
+            font-size: 1.2rem;
+            background: rgba(184, 137, 43, 0.15);
+            border-radius: 40px;
+            padding: 8px 24px;
+            display: inline-block;
+            margin-top: 12px;
+            border: 1px solid rgba(184, 137, 43, 0.2);
+        }
+        .taxa-zero span {
+            font-weight: 800;
+            color: #b8892b;
+        }
+        .section-cta {
+            padding: 70px 0;
+            background: #f8fafc;
+            text-align: center;
+        }
+        .section-cta h2 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #0a2b4e;
+            margin-bottom: 12px;
+        }
+        .section-cta p {
+            font-size: 1.1rem;
+            color: #2c4a6a;
+            max-width: 700px;
+            margin: 0 auto 32px;
+        }
+        .section-cta .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 18px;
+        }
+        .footer {
+            background: #0a2b4e;
+            color: rgba(255, 255, 255, 0.6);
+            padding: 40px 0 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .footer .container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+        .footer .brand {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #fff;
+        }
+        .footer .brand span {
+            color: #b8892b;
+        }
+        .footer .info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px 40px;
+        }
+        .footer .info div {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .footer .info .label {
+            font-weight: 600;
+            color: #fff;
+        }
+        .footer .info a {
+            color: rgba(255, 255, 255, 0.6);
+            transition: color 0.2s;
+        }
+        .footer .info a:hover {
+            color: #b8892b;
+        }
+        .footer .copy {
+            width: 100%;
+            text-align: center;
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.9rem;
+        }
+        @media (max-width: 992px) {
+            .hero-grid,
+            .section-institucional .container,
+            .section-financeiro .container,
+            .section-oracle .container {
+                grid-template-columns: 1fr;
+            }
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .hero-content .sub {
+                max-width: 100%;
+            }
+            .hero-visual .cloud-illustration {
+                max-width: 100%;
+            }
+            .oracle-text ul {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 600px) {
+            .navbar .container {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            .hero-indicators {
+                gap: 16px;
+            }
+            .indicator {
+                flex: 1 1 100%;
+            }
+            .indicator strong {
+                font-size: 1.2rem;
+            }
+            .preco-box .detalhes {
+                grid-template-columns: 1fr;
+            }
+            .section-comercial .preco-box .valor {
+                font-size: 2.6rem;
+            }
+            .footer .container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .footer .info {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                SPDATA <span>PACS</span> Cloud
+                <small>37 anos</small>
+            </div>
+            <div class="nav-actions">
+                <a href="#comercial" class="btn-primary"><i class="fas fa-file-signature"></i> Aceitar Proposta</a>
+                <a href="#cta" class="btn-secondary"><i class="fas fa-calendar-check"></i> Agendar</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1>SPDATA <span class="highlight">PACS Cloud</span></h1>
+                <p class="sub">Plataforma completa para armazenamento, distribuição e gestão de exames de imagem</p>
+                <p style="font-weight:500; color:#1a4b7a; margin-bottom:8px;">
+                    <i class="fas fa-cloud" style="color:#b8892b; margin-right:8px;"></i>
+                    Solução corporativa hospedada em Oracle Cloud Brasil, desenvolvida para hospitais e instituições de saúde que buscam segurança, escalabilidade e previsibilidade financeira.
+                </p>
+                <div class="hero-indicators">
+                    <div class="indicator"><i class="fas fa-hospital"></i><div><strong>37</strong><span>anos de mercado</span></div></div>
+                    <div class="indicator"><i class="fas fa-building"></i><div><strong>650+</strong><span>instituições atendidas</span></div></div>
+                    <div class="indicator"><i class="fas fa-map-marker-alt"></i><div><strong>18</strong><span>estados brasileiros</span></div></div>
+                    <div class="indicator"><i class="fas fa-shield-alt"></i><div><strong>LGPD</strong><span>segurança e conformidade</span></div></div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#comercial" class="btn-primary"><i class="fas fa-check-circle"></i> Aceitar Proposta</a>
+                    <a href="#cta" class="btn-secondary"><i class="fas fa-video"></i> Solicitar Demonstração</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="cloud-illustration">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p style="font-size:1.2rem; font-weight:600;">Oracle Cloud Brasil</p>
+                    <p style="color:#2c4a6a; font-size:0.95rem;">Alta disponibilidade · LGPD · Escalabilidade</p>
+                    <div style="display:flex; gap:20px; margin-top:16px; justify-content:center;">
+                        <span style="background:#0a2b4e10; padding:6px 16px; border-radius:40px; font-weight:500;">99,9%</span>
+                        <span style="background:#0a2b4e10; padding:6px 16px; border-radius:40px; font-weight:500;">Backup diário</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== INSTITUCIONAL ===== -->
+    <section class="section-institucional">
+        <div class="container">
+            <div class="institucional-text">
+                <h2>A experiência SPDATA em gestão de imagens</h2>
+                <p>A SPDATA é uma das empresas mais tradicionais do mercado hospitalar brasileiro, com mais de 37 anos de atuação.</p>
+                <p>Desenvolvemos uma plataforma PACS moderna, escalável e preparada para atender instituições de todos os portes, combinando nossa profunda experiência hospitalar com as mais avançadas tecnologias em diagnóstico por imagem.</p>
+                <p>Nossa solução entrega uma gestão completa de exames, com segurança, eficiência e total previsibilidade financeira.</p>
+            </div>
+            <div class="institucional-image">
+                <i class="fas fa-building"></i>
+                <div>
+                    <div class="badge">37 anos</div>
+                    <p style="color:#2c4a6a; font-weight:500;">+650 instituições atendidas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CENÁRIO ===== -->
+    <section class="section-cenario">
+        <div class="container">
+            <h2>Estrutura contemplada nesta proposta</h2>
+            <div class="cards-cenario">
+                <div class="card-cenario"><h4>Ressonância Magnética</h4><div class="equip">1 equipamento</div><div class="volume">300 <small>exames/mês</small></div></div>
+                <div class="card-cenario"><h4>Tomografia Computadorizada</h4><div class="equip">1 equipamento</div><div class="volume">300 <small>exames/mês</small></div></div>
+                <div class="card-cenario"><h4>Raios-X Digital</h4><div class="equip">1 equipamento</div><div class="volume">1.600 <small>exames/mês</small></div></div>
+                <div class="card-cenario"><h4>Ultrassonografia</h4><div class="equip">2 equipamentos</div><div class="volume">400 <small>exames/mês</small></div></div>
+            </div>
+            <div class="total-volume">Volume estimado <span>2.600</span> exames/mês</div>
+        </div>
+    </section>
+
+    <!-- ===== DIFERENCIAL FINANCEIRO ===== -->
+    <section class="section-financeiro">
+        <div class="container">
+            <div class="financeiro-text">
+                <h2>Cresça sem aumentar seus custos</h2>
+                <p>Parte das soluções disponíveis no mercado utiliza modelos de cobrança baseados na quantidade de exames realizados. À medida que o volume cresce, o custo mensal também aumenta.</p>
+                <p>A SPDATA adota um modelo de <strong>mensalidade fixa</strong>, permitindo previsibilidade orçamentária e expansão das operações sem aumento proporcional dos custos.</p>
+                <p class="destaque">Mais exames. Mesmo investimento.</p>
+            </div>
+            <div class="grafico">
+                <h4 style="font-weight:600; color:#0a2b4e; margin-bottom:12px;">Comparativo de custos</h4>
+                <div class="linha">
+                    <div class="linha-item">
+                        <span class="label"><i class="fas fa-arrow-up" style="color:#b8892b;"></i> Por exame</span>
+                        <div class="barra"><div class="fill crescente"></div></div>
+                    </div>
+                    <div class="linha-item">
+                        <span class="label"><i class="fas fa-minus" style="color:#0a2b4e;"></i> SPDATA PACS</span>
+                        <div class="barra"><div class="fill fixo"></div></div>
+                    </div>
+                </div>
+                <div class="legenda">
+                    <span><i class="fas fa-circle"></i> Crescimento do volume → custo aumenta</span>
+                    <span><i class="fas fa-circle" style="color:#0a2b4e;"></i> Mensalidade fixa → previsível</span>
+                </div>
+                <p style="margin-top:20px; font-weight:600; color:#0a2b4e; text-align:center;">+ exames · mesmo valor</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RECURSOS ===== -->
+    <section class="section-recursos">
+        <div class="container">
+            <h2>Recursos inclusos</h2>
+            <p class="subtitle">Tudo que sua instituição precisa em uma única plataforma</p>
+            <div class="grid-recursos">
+                <div class="recurso"><i class="fas fa-eye"></i> Viewer DICOM Web</div>
+                <div class="recurso"><i class="fas fa-user"></i> Portal do Paciente</div>
+                <div class="recurso"><i class="fas fa-user-md"></i> Portal do Médico Solicitante</div>
+                <div class="recurso"><i class="fas fa-file-pdf"></i> Entrega digital de exames</div>
+                <div class="recurso"><i class="fas fa-headset"></i> Telelaudo</div>
+                <div class="recurso"><i class="fas fa-share-alt"></i> Compartilhamento seguro</div>
+                <div class="recurso"><i class="fas fa-pen"></i> Assinatura digital</div>
+                <div class="recurso"><i class="fas fa-database"></i> Backup diário</div>
+                <div class="recurso"><i class="fas fa-cloud"></i> Oracle Cloud Brasil</div>
+                <div class="recurso"><i class="fas fa-users"></i> Usuários ilimitados</div>
+                <div class="recurso"><i class="fas fa-user-md"></i> Médicos ilimitados</div>
+                <div class="recurso"><i class="fas fa-sync-alt"></i> Atualizações inclusas</div>
+                <div class="recurso"><i class="fas fa-connectdevelop"></i> Integração DICOM</div>
+                <div class="recurso"><i class="fas fa-hospital-alt"></i> Integração com sistemas hospitalares</div>
+                <div class="recurso"><i class="fas fa-lock"></i> Ambiente LGPD</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DIFERENCIAIS ===== -->
+    <section class="section-diferenciais">
+        <div class="container">
+            <h2>Diferenciais que fazem a diferença</h2>
+            <div class="grid-diferenciais">
+                <div class="card-diferencial">
+                    <div class="icon"><i class="fab fa-whatsapp"></i></div>
+                    <h4>WhatsApp Integrado</h4>
+                    <p>Envio automático de exames liberados, laudos concluídos e links de acesso. Comunicação direta com pacientes, sem contratação adicional.</p>
+                </div>
+                <div class="card-diferencial">
+                    <div class="icon"><i class="fas fa-history"></i></div>
+                    <h4>Importação de Legado Inclusa</h4>
+                    <p>Migração de até <strong>1 TB</strong> de exames e laudos sem custos adicionais.</p>
+                </div>
+                <div class="card-diferencial">
+                    <div class="icon"><i class="fas fa-rocket"></i></div>
+                    <h4>Implantação Gratuita</h4>
+                    <p>Planejamento, configuração, parametrização, treinamentos e acompanhamento Go Live.</p>
+                    <div class="valor-destaque">R$ 0,00</div>
+                </div>
+                <div class="card-diferencial">
+                    <div class="icon"><i class="fas fa-headset"></i></div>
+                    <h4>Suporte Especializado</h4>
+                    <p>Equipe com experiência em hospitais, centros de diagnóstico e clínicas de imagem. Sem contratação adicional de plantão.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ORACLE CLOUD ===== -->
+    <section class="section-oracle">
+        <div class="container">
+            <div class="oracle-text">
+                <h2>Infraestrutura Oracle Cloud Brasil</h2>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Datacenter nacional</li>
+                    <li><i class="fas fa-check-circle"></i> Alta disponibilidade</li>
+                    <li><i class="fas fa-check-circle"></i> Backup automatizado</li>
+                    <li><i class="fas fa-check-circle"></i> Ambiente escalável</li>
+                    <li><i class="fas fa-check-circle"></i> Segurança corporativa</li>
+                    <li><i class="fas fa-check-circle"></i> LGPD</li>
+                    <li><i class="fas fa-check-circle"></i> Monitoramento contínuo</li>
+                </ul>
+            </div>
+            <div class="oracle-visual">
+                <i class="fas fa-cloud"></i>
+                <div style="margin-left:20px;">
+                    <div style="font-weight:700; font-size:1.6rem; color:#0a2b4e;">Oracle Cloud</div>
+                    <div style="color:#2c4a6a;">Brasil · <span style="font-weight:600;">SJC</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== COMPARATIVO ===== -->
+    <section class="section-comparativo">
+        <div class="container">
+            <h2>Comparativo de mercado</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Característica</th><th>Mercado Tradicional</th><th>SPDATA PACS</th></tr></thead>
+                    <tbody>
+                        <tr><td>Cobrança por exame</td><td>Sim em muitos casos</td><td><i class="fas fa-times"></i> Não</td></tr>
+                        <tr><td>Usuários ilimitados</td><td>Nem sempre</td><td><i class="fas fa-check"></i> Sim</td></tr>
+                        <tr><td>Portal do paciente</td><td>Variável</td><td><i class="fas fa-check"></i> Sim</td></tr>
+                        <tr><td>Portal do médico</td><td>Variável</td><td><i class="fas fa-check"></i> Sim</td></tr>
+                        <tr><td>WhatsApp integrado</td><td>Opcional</td><td><i class="fas fa-check"></i> Incluso</td></tr>
+                        <tr><td>Importação de legado</td><td>Geralmente cobrada</td><td><i class="fas fa-check"></i> Inclusa</td></tr>
+                        <tr><td>Implantação</td><td>Frequentemente cobrada</td><td><i class="fas fa-check"></i> Gratuita</td></tr>
+                        <tr><td>Crescimento sem aumento de custo</td><td>Não</td><td><i class="fas fa-check"></i> Sim</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONDIÇÃO COMERCIAL ===== -->
+    <section class="section-comercial" id="comercial">
+        <div class="container">
+            <div class="badge-premium"><i class="fas fa-crown"></i> Condição Especial</div>
+            <h2>Hospital Santa Madalena Sofia</h2>
+            <p class="sub">Investimento Promocional · 24 meses de vigência</p>
+            <div class="preco-box">
+                <div class="valor">R$ 2.900 <small>/mês</small></div>
+                <div class="periodo">Primeiros 12 meses</div>
+                <div class="detalhes">
+                    <span><i class="fas fa-check-circle"></i> Plataforma PACS</span>
+                    <span><i class="fas fa-check-circle"></i> Oracle Cloud Brasil</span>
+                    <span><i class="fas fa-check-circle"></i> WhatsApp Integrado</span>
+                    <span><i class="fas fa-check-circle"></i> Portal Médico</span>
+                    <span><i class="fas fa-check-circle"></i> Portal Paciente</span>
+                    <span><i class="fas fa-check-circle"></i> Importação 1 TB</span>
+                    <span><i class="fas fa-check-circle"></i> Implantação Gratuita</span>
+                    <span><i class="fas fa-check-circle"></i> Suporte Especializado</span>
+                </div>
+                <div class="preco-renovacao">
+                    <strong>A partir do 13º mês:</strong> R$ 3.420/mês<br />
+                    <span style="font-size:0.9rem; color:rgba(255,255,255,0.6);">Mantendo todos os recursos e funcionalidades</span>
+                </div>
+            </div>
+            <div class="taxa-zero">
+                <i class="fas fa-tag"></i> Taxa de Implantação: <span>R$ 0,00</span>
+                <span style="display:inline-block; margin-left:12px; text-decoration:line-through; color:rgba(255,255,255,0.4);">De R$ 4.800,00</span>
+            </div>
+            <p style="margin-top:20px; color:rgba(255,255,255,0.5); font-size:0.95rem;">Vigência contratual: 24 meses</p>
+        </div>
+    </section>
+
+    <!-- ===== CTA FINAL ===== -->
+    <section class="section-cta" id="cta">
+        <div class="container">
+            <h2>Vamos evoluir juntos a gestão de imagens do Hospital Santa Madalena Sofia</h2>
+            <p>A SPDATA acredita que tecnologia deve gerar eficiência operacional, segurança assistencial e previsibilidade financeira.</p>
+            <div class="buttons">
+                <a href="#comercial" class="btn-gold"><i class="fas fa-check-circle"></i> Aceitar Proposta</a>
+                <a href="#" class="btn-secondary"><i class="fas fa-calendar-plus"></i> Agendar Reunião</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="brand">
+                SPDATA <span>PACS</span> Cloud
+                <div style="font-weight:400; font-size:0.85rem; color:rgba(255,255,255,0.5);">37 anos de experiência hospitalar</div>
+            </div>
+            <div class="info">
+                <div>
+                    <span class="label">SPDATA</span>
+                    <a href="#">www.spdata.com.br</a>
+                </div>
+                <div>
+                    <span class="label">WhatsApp Comercial</span>
+                    <a href="tel:+5545998607211"><i class="fab fa-whatsapp"></i> (45) 99860-7211</a>
+                </div>
+            </div>
+            <div class="copy">
+                &copy; 2026 SPDATA PACS Cloud · Todos os direitos reservados
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.btn-primary, .btn-gold, .btn-secondary').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if (this.href && this.href.startsWith('#')) return;
+                e.preventDefault();
+                alert('Redirecionando para a área de contratação / demonstração.');
+            });
+        });
+    </script>
+
+</body>
+</html>
