@@ -6,12 +6,10 @@
     <title>SPDATA PACS Cloud · Proposta Premium</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <style>
-        *,
-        *::before,
-        *::after {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -353,6 +351,17 @@
             color: #b8892b;
             font-size: 1.3rem;
         }
+        .financeiro-text .simulacao {
+            background: #f0f5fe;
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 20px;
+            border-left: 4px solid #b8892b;
+        }
+        .financeiro-text .simulacao p {
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
         .grafico {
             background: #f8fafc;
             border-radius: 28px;
@@ -450,51 +459,23 @@
         .grid-recursos .recurso:hover {
             background: rgba(255, 255, 255, 0.12);
         }
-        .section-diferenciais {
-            padding: 70px 0;
-            background: #ffffff;
+        .grid-recursos .recurso.opcional i {
+            color: #8aa0b8;
         }
-        .section-diferenciais h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 40px;
-            color: #0a2b4e;
+        .grid-recursos .recurso.opcional {
+            background: rgba(255, 255, 255, 0.03);
+            border-color: rgba(255, 255, 255, 0.08);
         }
-        .grid-diferenciais {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 30px;
-        }
-        .card-diferencial {
-            background: #f8fafc;
-            border-radius: 24px;
-            padding: 30px 24px;
-            border: 1px solid rgba(10, 43, 78, 0.04);
-            transition: box-shadow 0.25s;
-        }
-        .card-diferencial:hover {
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
-        }
-        .card-diferencial .icon {
-            font-size: 2.2rem;
+        .grid-recursos .recurso.opcional::after {
+            content: "opcional";
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: rgba(184, 137, 43, 0.2);
+            padding: 2px 10px;
+            border-radius: 20px;
+            margin-left: auto;
             color: #b8892b;
-            margin-bottom: 12px;
-        }
-        .card-diferencial h4 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #0a2b4e;
-            margin-bottom: 8px;
-        }
-        .card-diferencial p {
-            color: #2c4a6a;
-        }
-        .card-diferencial .valor-destaque {
-            font-weight: 800;
-            font-size: 1.8rem;
-            color: #b8892b;
-            margin: 8px 0 4px;
         }
         .section-oracle {
             background: #eef3f9;
@@ -664,6 +645,11 @@
             display: flex;
             align-items: center;
         }
+        .preco-box .detalhes .opcional-text {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.8rem;
+            margin-left: 4px;
+        }
         .preco-renovacao {
             margin-top: 20px;
             font-size: 1.1rem;
@@ -708,6 +694,75 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 18px;
+        }
+        .form-aceite {
+            background: #ffffff;
+            border-radius: 32px;
+            padding: 40px 32px;
+            max-width: 600px;
+            margin: 40px auto 0;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(10, 43, 78, 0.06);
+            text-align: left;
+        }
+        .form-aceite h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #0a2b4e;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        .form-aceite p {
+            color: #2c4a6a;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .form-aceite .campo {
+            margin-bottom: 18px;
+        }
+        .form-aceite label {
+            display: block;
+            font-weight: 600;
+            color: #0a2b4e;
+            margin-bottom: 4px;
+            font-size: 0.95rem;
+        }
+        .form-aceite input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #d0d8e0;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: border 0.2s;
+            background: #f8fafc;
+        }
+        .form-aceite input:focus {
+            border-color: #b8892b;
+            outline: none;
+            background: #fff;
+        }
+        .form-aceite .btn-enviar {
+            width: 100%;
+            background: #0a2b4e;
+            color: #fff;
+            border: none;
+            padding: 16px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.25s, transform 0.15s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+        .form-aceite .btn-enviar i {
+            font-size: 1.3rem;
+        }
+        .form-aceite .btn-enviar:hover {
+            background: #1a4b7a;
+            transform: translateY(-2px);
         }
         .footer {
             background: #0a2b4e;
@@ -809,6 +864,9 @@
             .footer .info {
                 justify-content: center;
             }
+            .form-aceite {
+                padding: 24px 16px;
+            }
         }
     </style>
 </head>
@@ -901,44 +959,46 @@
         <div class="container">
             <div class="financeiro-text">
                 <h2>Cresça sem aumentar seus custos</h2>
-                <p>Parte das soluções disponíveis no mercado utiliza modelos de cobrança baseados na quantidade de exames realizados. À medida que o volume cresce, o custo mensal também aumenta.</p>
-                <p>A SPDATA adota um modelo de <strong>mensalidade fixa</strong>, permitindo previsibilidade orçamentária e expansão das operações sem aumento proporcional dos custos.</p>
+                <p>Muitas soluções disponíveis no mercado adotam modelos de cobrança baseados na quantidade de exames realizados. Com o crescimento do volume, o custo mensal sobe proporcionalmente, tornando o orçamento imprevisível.</p>
+                <p>A <strong>SPDATA</strong> adota um modelo de <strong>mensalidade fixa</strong>, que permite previsibilidade orçamentária e expansão das operações sem aumento proporcional dos custos.</p>
                 <p class="destaque">Mais exames. Mesmo investimento.</p>
+                <div class="simulacao">
+                    <p><i class="fas fa-calculator" style="color:#b8892b; margin-right:8px;"></i> <strong>Simule o impacto do crescimento:</strong></p>
+                    <p style="font-size:0.95rem;">Com o modelo variável, cada exame adicional representa um custo extra. Com a SPDATA, você pode crescer sem surpresas na fatura mensal.</p>
+                </div>
             </div>
             <div class="grafico">
-                <h4 style="font-weight:600; color:#0a2b4e; margin-bottom:12px;">Comparativo de custos</h4>
+                <h4 style="font-weight:600; color:#0a2b4e; margin-bottom:12px;">Comparativo de evolução de custos</h4>
                 <div class="linha">
                     <div class="linha-item">
-                        <span class="label"><i class="fas fa-arrow-up" style="color:#b8892b;"></i> Por exame</span>
+                        <span class="label"><i class="fas fa-arrow-up" style="color:#b8892b;"></i> Modelo variável</span>
                         <div class="barra"><div class="fill crescente"></div></div>
                     </div>
                     <div class="linha-item">
-                        <span class="label"><i class="fas fa-minus" style="color:#0a2b4e;"></i> SPDATA PACS</span>
+                        <span class="label"><i class="fas fa-minus" style="color:#0a2b4e;"></i> SPDATA (fixo)</span>
                         <div class="barra"><div class="fill fixo"></div></div>
                     </div>
                 </div>
                 <div class="legenda">
-                    <span><i class="fas fa-circle"></i> Crescimento do volume → custo aumenta</span>
-                    <span><i class="fas fa-circle" style="color:#0a2b4e;"></i> Mensalidade fixa → previsível</span>
+                    <span><i class="fas fa-circle"></i> Custo cresce com o volume</span>
+                    <span><i class="fas fa-circle" style="color:#0a2b4e;"></i> Custo estável, mesmo com crescimento</span>
                 </div>
-                <p style="margin-top:20px; font-weight:600; color:#0a2b4e; text-align:center;">+ exames · mesmo valor</p>
+                <p style="margin-top:20px; font-weight:600; color:#0a2b4e; text-align:center;">+ exames · mesmo custo</p>
             </div>
         </div>
     </section>
 
-    <!-- ===== RECURSOS ===== -->
+    <!-- ===== RECURSOS INCLUSOS ===== -->
     <section class="section-recursos">
         <div class="container">
             <h2>Recursos inclusos</h2>
-            <p class="subtitle">Tudo que sua instituição precisa em uma única plataforma</p>
+            <p class="subtitle">Funcionalidades essenciais para a gestão completa de exames</p>
             <div class="grid-recursos">
                 <div class="recurso"><i class="fas fa-eye"></i> Viewer DICOM Web</div>
                 <div class="recurso"><i class="fas fa-user"></i> Portal do Paciente</div>
                 <div class="recurso"><i class="fas fa-user-md"></i> Portal do Médico Solicitante</div>
                 <div class="recurso"><i class="fas fa-file-pdf"></i> Entrega digital de exames</div>
-                <div class="recurso"><i class="fas fa-headset"></i> Telelaudo</div>
                 <div class="recurso"><i class="fas fa-share-alt"></i> Compartilhamento seguro</div>
-                <div class="recurso"><i class="fas fa-pen"></i> Assinatura digital</div>
                 <div class="recurso"><i class="fas fa-database"></i> Backup diário</div>
                 <div class="recurso"><i class="fas fa-cloud"></i> Oracle Cloud Brasil</div>
                 <div class="recurso"><i class="fas fa-users"></i> Usuários ilimitados</div>
@@ -947,37 +1007,14 @@
                 <div class="recurso"><i class="fas fa-connectdevelop"></i> Integração DICOM</div>
                 <div class="recurso"><i class="fas fa-hospital-alt"></i> Integração com sistemas hospitalares</div>
                 <div class="recurso"><i class="fas fa-lock"></i> Ambiente LGPD</div>
+                <div class="recurso"><i class="fas fa-plug"></i> Integração com sistemas de telelaudo</div>
+                <!-- opcionais -->
+                <div class="recurso opcional"><i class="fab fa-whatsapp"></i> WhatsApp integrado</div>
+                <div class="recurso opcional"><i class="fas fa-pen"></i> Assinatura digital</div>
             </div>
-        </div>
-    </section>
-
-    <!-- ===== DIFERENCIAIS ===== -->
-    <section class="section-diferenciais">
-        <div class="container">
-            <h2>Diferenciais que fazem a diferença</h2>
-            <div class="grid-diferenciais">
-                <div class="card-diferencial">
-                    <div class="icon"><i class="fab fa-whatsapp"></i></div>
-                    <h4>WhatsApp Integrado</h4>
-                    <p>Envio automático de exames liberados, laudos concluídos e links de acesso. Comunicação direta com pacientes, sem contratação adicional.</p>
-                </div>
-                <div class="card-diferencial">
-                    <div class="icon"><i class="fas fa-history"></i></div>
-                    <h4>Importação de Legado Inclusa</h4>
-                    <p>Migração de até <strong>1 TB</strong> de exames e laudos sem custos adicionais.</p>
-                </div>
-                <div class="card-diferencial">
-                    <div class="icon"><i class="fas fa-rocket"></i></div>
-                    <h4>Implantação Gratuita</h4>
-                    <p>Planejamento, configuração, parametrização, treinamentos e acompanhamento Go Live.</p>
-                    <div class="valor-destaque">R$ 0,00</div>
-                </div>
-                <div class="card-diferencial">
-                    <div class="icon"><i class="fas fa-headset"></i></div>
-                    <h4>Suporte Especializado</h4>
-                    <p>Equipe com experiência em hospitais, centros de diagnóstico e clínicas de imagem. Sem contratação adicional de plantão.</p>
-                </div>
-            </div>
+            <p style="text-align:center; margin-top:24px; color:rgba(255,255,255,0.5); font-size:0.9rem;">
+                <i class="fas fa-info-circle"></i> Itens com selo "opcional" podem ser contratados à parte.
+            </p>
         </div>
     </section>
 
@@ -994,6 +1031,7 @@
                     <li><i class="fas fa-check-circle"></i> Segurança corporativa</li>
                     <li><i class="fas fa-check-circle"></i> LGPD</li>
                     <li><i class="fas fa-check-circle"></i> Monitoramento contínuo</li>
+                    <li><i class="fas fa-check-circle"></i> Suporte 24x7 incluso</li>
                 </ul>
             </div>
             <div class="oracle-visual">
@@ -1009,18 +1047,21 @@
     <!-- ===== COMPARATIVO ===== -->
     <section class="section-comparativo">
         <div class="container">
-            <h2>Comparativo de mercado</h2>
+            <h2>Comparativo com o mercado</h2>
             <div class="table-wrap">
                 <table>
-                    <thead><tr><th>Característica</th><th>Mercado Tradicional</th><th>SPDATA PACS</th></tr></thead>
+                    <thead><tr><th>Característica</th><th>Mercado</th><th>SPDATA PACS</th></tr></thead>
                     <tbody>
-                        <tr><td>Cobrança por exame</td><td>Sim em muitos casos</td><td><i class="fas fa-times"></i> Não</td></tr>
+                        <tr><td>Cobrança por exame</td><td>Comum</td><td><i class="fas fa-times"></i> Não</td></tr>
+                        <tr><td>Mensalidade fixa</td><td>Raro</td><td><i class="fas fa-check"></i> Sim</td></tr>
                         <tr><td>Usuários ilimitados</td><td>Nem sempre</td><td><i class="fas fa-check"></i> Sim</td></tr>
                         <tr><td>Portal do paciente</td><td>Variável</td><td><i class="fas fa-check"></i> Sim</td></tr>
                         <tr><td>Portal do médico</td><td>Variável</td><td><i class="fas fa-check"></i> Sim</td></tr>
-                        <tr><td>WhatsApp integrado</td><td>Opcional</td><td><i class="fas fa-check"></i> Incluso</td></tr>
-                        <tr><td>Importação de legado</td><td>Geralmente cobrada</td><td><i class="fas fa-check"></i> Inclusa</td></tr>
+                        <tr><td>WhatsApp integrado</td><td>Opcional (custo extra)</td><td><i class="fas fa-minus"></i> Opcional</td></tr>
+                        <tr><td>Assinatura digital</td><td>Opcional</td><td><i class="fas fa-minus"></i> Opcional</td></tr>
+                        <tr><td>Armazenamento contratado (1 TB)</td><td>Geralmente cobrado à parte</td><td><i class="fas fa-check"></i> Incluso</td></tr>
                         <tr><td>Implantação</td><td>Frequentemente cobrada</td><td><i class="fas fa-check"></i> Gratuita</td></tr>
+                        <tr><td>Suporte 24x7</td><td>Nem sempre incluso</td><td><i class="fas fa-check"></i> Incluso</td></tr>
                         <tr><td>Crescimento sem aumento de custo</td><td>Não</td><td><i class="fas fa-check"></i> Sim</td></tr>
                     </tbody>
                 </table>
@@ -1040,12 +1081,14 @@
                 <div class="detalhes">
                     <span><i class="fas fa-check-circle"></i> Plataforma PACS</span>
                     <span><i class="fas fa-check-circle"></i> Oracle Cloud Brasil</span>
-                    <span><i class="fas fa-check-circle"></i> WhatsApp Integrado</span>
                     <span><i class="fas fa-check-circle"></i> Portal Médico</span>
                     <span><i class="fas fa-check-circle"></i> Portal Paciente</span>
-                    <span><i class="fas fa-check-circle"></i> Importação 1 TB</span>
+                    <span><i class="fas fa-check-circle"></i> Armazenamento 1 TB</span>
                     <span><i class="fas fa-check-circle"></i> Implantação Gratuita</span>
-                    <span><i class="fas fa-check-circle"></i> Suporte Especializado</span>
+                    <span><i class="fas fa-check-circle"></i> Suporte 24x7</span>
+                    <span><i class="fas fa-check-circle"></i> Integração com telelaudo</span>
+                    <span><i class="fas fa-plus-circle" style="color:#b8892b;"></i> WhatsApp <span class="opcional-text">(opcional)</span></span>
+                    <span><i class="fas fa-plus-circle" style="color:#b8892b;"></i> Assinatura digital <span class="opcional-text">(opcional)</span></span>
                 </div>
                 <div class="preco-renovacao">
                     <strong>A partir do 13º mês:</strong> R$ 3.420/mês<br />
@@ -1060,14 +1103,38 @@
         </div>
     </section>
 
-    <!-- ===== CTA FINAL ===== -->
+    <!-- ===== FORMULÁRIO DE ACEITE ===== -->
     <section class="section-cta" id="cta">
         <div class="container">
             <h2>Vamos evoluir juntos a gestão de imagens do Hospital Santa Madalena Sofia</h2>
             <p>A SPDATA acredita que tecnologia deve gerar eficiência operacional, segurança assistencial e previsibilidade financeira.</p>
             <div class="buttons">
-                <a href="#comercial" class="btn-gold"><i class="fas fa-check-circle"></i> Aceitar Proposta</a>
+                <a href="#form-aceite" class="btn-gold"><i class="fas fa-check-circle"></i> Aceitar Proposta</a>
                 <a href="#" class="btn-secondary"><i class="fas fa-calendar-plus"></i> Agendar Reunião</a>
+            </div>
+
+            <!-- Formulário de Aceite -->
+            <div class="form-aceite" id="form-aceite">
+                <h3><i class="fas fa-file-signature" style="color:#b8892b;"></i> Aceite da Proposta</h3>
+                <p>Preencha seus dados e clique em "Enviar via WhatsApp" para formalizar seu aceite.</p>
+                <form id="formAceite">
+                    <div class="campo">
+                        <label for="nome">Nome completo</label>
+                        <input type="text" id="nome" placeholder="Seu nome" required />
+                    </div>
+                    <div class="campo">
+                        <label for="telefone">Telefone (com DDD)</label>
+                        <input type="tel" id="telefone" placeholder="(45) 99999-9999" required />
+                    </div>
+                    <div class="campo">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" placeholder="seu@email.com" required />
+                    </div>
+                    <button type="button" class="btn-enviar" id="btnEnviarWhats"><i class="fab fa-whatsapp"></i> Enviar via WhatsApp</button>
+                </form>
+                <p style="margin-top:16px; font-size:0.9rem; color:#4a6a8a;">
+                    <i class="fas fa-lock" style="color:#b8892b;"></i> Seus dados serão enviados com segurança para o nosso comercial.
+                </p>
             </div>
         </div>
     </section>
@@ -1086,7 +1153,7 @@
                 </div>
                 <div>
                     <span class="label">WhatsApp Comercial</span>
-                    <a href="tel:+5545998607211"><i class="fab fa-whatsapp"></i> (45) 99860-7211</a>
+                    <a href="https://wa.me/5545998607211" target="_blank"><i class="fab fa-whatsapp"></i> (45) 99860-7211</a>
                 </div>
             </div>
             <div class="copy">
@@ -1096,12 +1163,27 @@
     </footer>
 
     <script>
-        document.querySelectorAll('.btn-primary, .btn-gold, .btn-secondary').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                if (this.href && this.href.startsWith('#')) return;
-                e.preventDefault();
-                alert('Redirecionando para a área de contratação / demonstração.');
-            });
+        document.getElementById('btnEnviarWhats').addEventListener('click', function() {
+            const nome = document.getElementById('nome').value.trim();
+            const telefone = document.getElementById('telefone').value.trim();
+            const email = document.getElementById('email').value.trim();
+
+            if (!nome || !telefone || !email) {
+                alert('Por favor, preencha todos os campos.');
+                return;
+            }
+
+            const numero = '5545998607211';
+
+            const mensagem =
+                `✅ *Aceite de Proposta - SPDATA PACS Cloud*%0A%0A` +
+                `*Nome:* ${encodeURIComponent(nome)}%0A` +
+                `*Telefone:* ${encodeURIComponent(telefone)}%0A` +
+                `*E-mail:* ${encodeURIComponent(email)}%0A%0A` +
+                `Estou de acordo com os termos da proposta e desejo prosseguir.`;
+
+            const url = `https://wa.me/${numero}?text=${mensagem}`;
+            window.open(url, '_blank');
         });
     </script>
 
